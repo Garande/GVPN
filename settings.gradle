@@ -1,2 +1,5 @@
+include ':openvpn'
+include ':vpnLib'
+include ':openvpn'
 include ':app'
 rootProject.name = "G-VPN"
