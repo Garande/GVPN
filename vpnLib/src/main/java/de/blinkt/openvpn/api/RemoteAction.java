@@ -5,7 +5,6 @@
 
 package de.blinkt.openvpn.api;
 
-import android.app.Activity;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
@@ -15,13 +14,15 @@ import android.os.IBinder;
 import android.os.RemoteException;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import de.blinkt.openvpn.LaunchVPN;
 import de.blinkt.openvpn.VpnProfile;
 import de.blinkt.openvpn.core.IOpenVPNServiceInternal;
 import de.blinkt.openvpn.core.OpenVPNService;
 import de.blinkt.openvpn.core.ProfileManager;
 
-public class RemoteAction extends Activity {
+public class RemoteAction extends AppCompatActivity {
 
     public static final String EXTRA_NAME = "de.blinkt.openvpn.api.profileName";
     private ExternalAppDatabase mExtAppDb;

@@ -1,51 +1,116 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center"
+        android:fillViewport="true"
         tools:context=".view.activities.MainActivity">
 
 
-        <LinearLayout
+        <androidx.drawerlayout.widget.DrawerLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:id="@+id/drawer_layout"
+            android:layout_height="match_parent"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            tools:openDrawer="end"
+            >
+
+
+            <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center"
-            android:orientation="vertical">
-            <androidx.appcompat.widget.AppCompatButton
+            android:gravity="center">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical">
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:theme="@style/ThemeOverlay.AppCompat.Dark"
+                        android:text="connect"
+                        android:id="@+id/connectionBtn"
+                        android:layout_marginHorizontal="40dp"/>
+
+
+                    <TextView
+                        android:id="@+id/uptime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:id="@+id/packets"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:id="@+id/bytesIn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:id="@+id/bytesOut"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:paddingTop="20dp"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:paddingBottom="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageButton
+                        android:id="@+id/menu_btn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/ic_baseline_menu_24"/>
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"/>
+
+                    <ImageButton
+                        android:id="@+id/servers_btn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/ic_baseline_wifi_protected_setup_24"/>
+
+                </LinearLayout>
+
+
+
+            </RelativeLayout>
+
+            <com.google.android.material.navigation.NavigationView
+                android:id="@+id/navigation_view"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:theme="@style/ThemeOverlay.AppCompat.Dark"
-                android:text="connect"
-                android:id="@+id/connectionBtn"
-                android:layout_marginHorizontal="40dp"/>
+                android:layout_height="match_parent"
+                android:layout_gravity="start"
+                android:fitsSystemWindows="true"
+                app:headerLayout="@layout/nav_header"
+                app:theme="@style/AppTheme.NavigationDrawerStyle"
+                app:menu="@menu/navigation_menu">
 
+            </com.google.android.material.navigation.NavigationView>
 
-            <TextView
-                android:id="@+id/uptime"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+        </androidx.drawerlayout.widget.DrawerLayout>
 
-            <TextView
-                android:id="@+id/packets"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-
-            <TextView
-                android:id="@+id/bytesIn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-
-            <TextView
-                android:id="@+id/bytesOut"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-
-        </LinearLayout>
-
-
-
-    </RelativeLayout>
+        <include layout="@layout/servers_layout" android:id="@+id/servers_layout"/>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </layout>

@@ -1,13 +1,8 @@
 <resources>
     <string name="app_name">G-VPN</string>
 
-    <style name="Button.Danger" parent="@style/Widget.AppCompat.Button.Colored">
-        <item name="colorButtonNormal">@color/material_red600</item>
-        <item name="android:textColor">@android:color/white</item>
-    </style>
 
-    <style name="Button.Success" parent="@style/Widget.AppCompat.Button.Colored">
-        <item name="colorButtonNormal">@color/material_green600</item>
-        <item name="android:textColor">@android:color/white</item>
-    </style>
+
+    <string name="Open">Open</string>
+    <string name="Close">Close</string>
 </resources>

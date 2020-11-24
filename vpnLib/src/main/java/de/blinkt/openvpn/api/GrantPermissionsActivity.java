@@ -5,11 +5,12 @@
 
 package de.blinkt.openvpn.api;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.net.VpnService;
 
-public class GrantPermissionsActivity extends Activity {
+import androidx.appcompat.app.AppCompatActivity;
+
+public class GrantPermissionsActivity extends AppCompatActivity {
 	private static final int VPN_PREPARE = 0;
 
 	@Override

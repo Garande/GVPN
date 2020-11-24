@@ -1,19 +1,87 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <style name="SplashTheme" parent="Theme.AppCompat.NoActionBar">
-        <item name="android:windowActionBar">false</item>
-        <item name="android:windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
         <item name="android:windowFullscreen">true</item>
         <item name="android:windowBackground">@drawable/splash_view</item>
     </style>
 
 
     <style name="AppTheme.NoActionBar" parent="Theme.AppCompat.Light.NoActionBar">
-        <item name="android:windowActionBar">false</item>
-        <item name="android:windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
         <item name="android:windowFullscreen">false</item>
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <!--style for ripple library-->
+    <style name="RippleStyleWhite">
+        <item name="mrl_rippleOverlay">true</item>
+        <item name="mrl_rippleColor">#80FFFFFF</item>
+        <item name="mrl_rippleHover">true</item>
+        <item name="mrl_rippleAlpha">0.2</item>
+    </style>
+
+    <style name="RippleStyleBlack" parent="RippleStyleWhite">
+        <item name="mrl_rippleColor">#8096989A</item>
+    </style>
+
+    <style name="RippleStyleDark" parent="RippleStyleWhite">
+        <item name="mrl_rippleColor">#80000000</item>
+    </style>
+
+
+    <style name="Widget.Design.RightSheet.Modal" parent="android:Widget">
+        <item name="enforceMaterialTheme">false</item>
+        <item name="background">?android:attr/colorBackground</item>
+        <item name="elevation" tools:ignore="NewApi">
+            @dimen/design_right_sheet_modal_elevation
+        </item>
+        <item name="behavior_peekHeight">auto</item>
+        <item name="behavior_hideable">true</item>
+        <item name="behavior_skipCollapsed">false</item>
+        <item name="shapeAppearance">@null</item>
+        <item name="shapeAppearanceOverlay">@null</item>
+        <item name="backgroundTint">?android:attr/colorBackground</item>
+    </style>
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/material_black</item>
+        <item name="colorPrimaryDark">@color/material_black</item>
+        <item name="colorAccent">@color/material_black</item>
+        <item name="actionBarStyle">@style/AppTheme.ActionBarStyle</item>
+        <item name="windowActionBarOverlay">true</item>
+        <!--        <item name="android:fontFamily">@font/spartan_mb_regular</item>-->
+        <item name="android:textSize">@dimen/btn_textSize_small</item>
+    </style>
+
+    <style name="AppTheme.NavigationDrawerStyle">
+        <item name="android:textColor">@color/material_grey700</item>
+        <item name="android:textSize">@dimen/Heading6</item>
+        <!--        <item name="android:fontFamily">@font/spartan_mb_regular</item>-->
+    </style>
+
+    <style name="AppTheme.ActionBarStyle" parent="@android:style/Theme.Holo.NoActionBar">
+        <item name="titleTextStyle">@style/AppTheme.ActionBar.TitleTextStyle</item>
+        <!--        <item name="android:fontFamily">@font/spartan_mb_regular</item>-->
+    </style>
+
+    <style name="AppTheme.ActionBar.TitleTextStyle" parent="@android:style/TextAppearance.Holo.Widget.ActionBar.Title">
+        <item name="android:textColor">@color/yb_primary_color</item>
+        <!--        <item name="android:fontFamily">@font/spartan_mb_regular</item>-->
+    </style>
+
+    <style name="Button.Danger" parent="@style/Widget.AppCompat.Button.Colored">
+        <item name="colorButtonNormal">@color/material_red600</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="Button.Success" parent="@style/Widget.AppCompat.Button.Colored">
+        <item name="colorButtonNormal">@color/material_green600</item>
+        <item name="android:textColor">@android:color/white</item>
     </style>
 </resources>

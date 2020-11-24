@@ -8,7 +8,6 @@ package de.blinkt.openvpn;
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.app.Activity;
-import android.app.AlertDialog;
 import android.content.ActivityNotFoundException;
 import android.content.ComponentName;
 import android.content.Context;
@@ -22,7 +21,6 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.os.RemoteException;
-import android.preference.PreferenceManager;
 import android.text.InputType;
 import android.text.TextUtils;
 import android.text.method.PasswordTransformationMethod;
@@ -30,6 +28,9 @@ import android.view.View;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
+
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
 
 import java.io.IOException;
 
@@ -68,7 +69,7 @@ import de.blinkt.openvpn.core.VpnStatus;
  * In a real application, you would probably use the shortcut intent to display specific content
  * or start a particular operation.
  */
-public class LaunchVPN extends Activity {
+public class LaunchVPN extends AppCompatActivity {
 
     public static final String EXTRA_KEY = "de.blinkt.openvpn.shortcutProfileUUID";
     public static final String EXTRA_NAME = "de.blinkt.openvpn.shortcutProfileName";
@@ -340,7 +341,7 @@ public class LaunchVPN extends Activity {
                 showLogWindow();
             }
         } else {
-            onActivityResult(START_VPN_PROFILE, Activity.RESULT_OK, null);
+            onActivityResult(START_VPN_PROFILE, AppCompatActivity.RESULT_OK, null);
         }
 
     }

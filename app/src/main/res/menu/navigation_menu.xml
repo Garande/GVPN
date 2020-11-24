@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <group
+        android:id="@+id/grp_2"
+        android:checkableBehavior="none">
+        <item android:id="@+id/servers"
+            android:icon="@drawable/ic_baseline_toys_24"
+            android:title="Servers"/>
+
+        <item
+            android:id="@+id/settings"
+            android:icon="@drawable/ic_baseline_settings_24"
+            android:title="Settings" />
+    </group>
+
+    <group
+        android:id="@+id/grp_3"
+        android:checkableBehavior="none">
+        <item android:id="@+id/share"
+            android:title="Share"
+            android:icon="@drawable/ic_baseline_share_24"/>
+
+        <item android:id="@+id/help"
+            android:icon="@drawable/ic_baseline_help_24"
+            android:title="Help"/>
+
+    </group>
+
+</menu>

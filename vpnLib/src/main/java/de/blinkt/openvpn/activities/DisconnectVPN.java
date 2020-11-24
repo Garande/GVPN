@@ -5,8 +5,6 @@
 
 package de.blinkt.openvpn.activities;
 
-import android.app.Activity;
-import android.app.AlertDialog;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -14,6 +12,9 @@ import android.content.Intent;
 import android.content.ServiceConnection;
 import android.os.IBinder;
 import android.os.RemoteException;
+
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
 
 import de.blinkt.openvpn.LaunchVPN;
 import de.blinkt.openvpn.R;
@@ -25,7 +26,7 @@ import de.blinkt.openvpn.core.VpnStatus;
 /**
  * Created by arne on 13.10.13.
  */
-public class DisconnectVPN extends Activity implements DialogInterface.OnClickListener, DialogInterface.OnCancelListener {
+public class DisconnectVPN extends AppCompatActivity implements DialogInterface.OnClickListener, DialogInterface.OnCancelListener {
     private IOpenVPNServiceInternal mService;
     private ServiceConnection mConnection = new ServiceConnection() {
 

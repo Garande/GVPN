@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="design_right_sheet_modal_elevation">16dp</dimen>
+    <dimen name="design_right_sheet_elevation">8dp</dimen>
+    <dimen name="design_right_sheet_peek_height_min">64dp</dimen>
+</resources>
