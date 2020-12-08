@@ -1,6 +1,8 @@
 package com.garande.g_vpn.view.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.work.Constraints;
+import androidx.work.NetworkType;
 import androidx.work.OneTimeWorkRequest;
 import androidx.work.PeriodicWorkRequest;
 import androidx.work.WorkManager;
@@ -26,7 +28,9 @@ public class SplashActivity extends AppCompatActivity {
     }
 
     private void initializeWorkRequest(){
-        gServerPeriodicWorkRequest = new PeriodicWorkRequest.Builder(GServerWorker.class, 20, TimeUnit.MINUTES).build();
+        Constraints constraints = new Constraints.Builder().setRequiredNetworkType(NetworkType.CONNECTED).setRequiresBatteryNotLow(true).build();
+        gServerPeriodicWorkRequest = new PeriodicWorkRequest.Builder(GServerWorker.class, 10, TimeUnit.MINUTES)
+                .setConstraints(constraints).build();
         WorkManager.getInstance(this).enqueue(gServerPeriodicWorkRequest);
     }
 
